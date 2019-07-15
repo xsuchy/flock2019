@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>What's new in Mock (2019)</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+
+        <div class="slides">
+
+              <section>
+                    <h1>What's new in Mock</h1>
+ 					<h3>(2019)</h3>
+                    <p>
+                        <small><a href="http://miroslav.suchy.cz">Miroslav Suchý</a> - <a href="http://miroslav.suchy.cz/presentations/flock2019">miroslav.suchy.cz/presentations/flock2019</a></small>
+                    </p>
+                </section>
+
+			<section>
+				<h3>GPG Checks</h3>
+				<p>GPG key for rawhide is checked now.</p>
+				<p>And for testing and debuginfo.</p>
+			</section>
+
+			<section>
+				<h3>Jinja2 support</h3>
+				<pre>
+# define your own config variable
+config_opts['fedora_number'] = '30'
+config_opts['root'] = 'fedora-{{ fedora_number }}-x86_64'
+config_opts['dist'] = 'fc{{ fedora_number }}'
+				</pre>
+			</section>
+
+			<section>
+				<h3>Set-up</h3>
+				<pre>
+You are not in the mock group.
+See https://github.com/rpm-software-management/mock/wiki#setup
+				</pre>
+			</section>
+			<section>
+				<h3>Dynamic Build Requires</h3>
+				<pre>
+%generate_buildrequires
+echo my-package
+<pre>
+				<p><a href="https://fedoraproject.org/wiki/Changes/DynamicBuildRequires">fedoraproject.org/wiki/Changes/DynamicBuildRequires</a></p>
+</pre>
+			</section>
+			<section>
+				<h3>Mockchain deprecated</h3>
+				<p>Replaced by `mock --chain`</p>
+			</section>
+			<section>
+				<h3>Old news</h3>
+				<p>Bootstrap chroots</p>
+				<p>--forcearch</p>
+			</section>
+			<section>
+				<h2>Future</h2>
+			</section>
+			<section>
+				<p>Drop python2 support (EL7 already use python3)</p>
+			</section>
+			<section>
+				<p>Drop EL7 support (spring 2020)</p>
+				<p>mock.el7 will not be released</p>
+				<p>Building for epel-7-* still supported</p>
+            </section>
+			<section>
+				<p>Make DNF default package manager</p>
+			</section>
+			<section>
+				<p>Support Subscription Manager</p>
+			</section>
+			<section>
+				<p>Host configs<p>
+			</section>
+			<section>
+                    <h1>Questions?</h1>
+                    <p>
+                        <a href="http://miroslav.suchy.cz/presentations/flock2019/">miroslav.suchy.cz/presentations/flock2019</a>
+                    </p>
+
+			</section>
+		</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
